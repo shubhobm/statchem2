@@ -1,0 +1,68 @@
+    Descriptors used in lta98. (The first study I did on aromatic amines did not
+include the Molconn-Z parameters; but in this second study, we did include them).  
+
+These descriptors remained after those descriptors with all 0 values were removed and 
+perfectly correlated descriptors were removed.  (There are 277 descriptors here, including logp).
+
+         idw midw w id hv hd ic_bar max_ic i_orb max_orb m1 m2 ic0-ic6
+         sic0-sic6 cic0-cic6 s0-s6 sc3-sc5 scy5 scy6 spc4-spc6 b0-b6
+         bc3 bc5 bcy5 bcy6 bpc4-bpc6 v0-v6 vc3 vc5 vcy5 vcy6 vpc4-vpc6
+         k0-k10
+
+         j jb jx jy
+
+         edh ed vol
+
+         homo homo1 lumo lumo1 hf dm
+
+         azv1-azv5 asv1-asv5 dsv1 dsv2 azs1-azs5 asz1-asz5 dn2s1-dn2s5 dn211-dn214
+         as11-as15 ds11-ds15 asn1-asn5 dsn1-dsn5 dn2n1-dn2n5 ans1-ans5 anv1-anv5
+         azn1-azn5 anz1-anz5 an11-an15 dsz1 dsz2 ann1-ann4 dn2z1-dn2z5
+
+
+         nvx nrings ncirc nelem fw xp7-xp10 xvp7-xvp10 xch9 xch10 xvch9 xvch10
+         kp0-kp3 ka1-ka3 si totop sumI sumDELI tets2 phia
+         SHsOH SHsNH2 SHssNH  SHother Hmax Gmax Hmin Gmin 
+          SsCH3  SssCH2 SdsCH SaaCH SsssCH
+          SaasC SaaaC  SsNH2 SssNH SaaNH
+         SaaN  SddsN  SsOH SdO SssO  SsF
+         SssS  SsCl  SsBr
+         idc idcbar Wp pf Wt knotp knotpv nclass numHBd  numHBa
+         SHCsats SHCsatu   SHarom SHHBD  SHHBA Qv
+         NHBint3-NHBint10 SHBint3 SHBint4
+
+  	   logp;
+
+88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+
+Broken down by descriptor class:  
+
+TS:      idw midw w id hv hd ic_bar m1 m2
+         s0-s6 sc3-sc5 scy5 scy6 spc4-spc6 k0-k10 j dn2s1-dn2s5
+         dn211-dn214 as11-as15 ds11-ds15 asn1-asn5 dsn1-dsn5 dn2n1-dn2n5
+         ans1-ans5 an11-an15 ann1-ann4 asv1-asv5 dsv1 dsv2
+         anv1-anv5
+         nrings ncirc xp7-xp10 xch9 xch10
+
+TC:  	 max_ic i_orb max_orb ic0-ic6 sic0-sic6 cic0-cic6 b0-b6
+         bc3 bc5 bcy5 bcy6 bpc4-bpc6 v0-v6 vc3 vc5 vcy5 vcy6
+         vpc4-vpc6 jb jx jy azv1-azv5  azs1-azs5 asz1-asz5
+          azn1-azn5 anz1-anz5 dsz1 dsz2 dn2z1-dn2z4
+
+         nvx nelem fw xvp7-xvp10 xvch9 xvch10
+         si totop sumI sumDELI tets2 phia
+         SHsOH  SHsNH2 SHssNH  SHother Hmax Gmax Hmin Gmin
+         SsCH3 SssCH2 SdsCH SaaCH SsssCH
+          SaasC SaaaC  SsNH2  SssNH SaaNH
+         SaaN  SddsN  SsOH SdO SssO SsF
+          SssS  SsCl  SsBr
+         idc idcbar Wp pf Wt knotp knotpv nclass numHBd numHBa
+         SHCsats SHCsatu   SHarom SHHBD SHHBA Qv
+         NHBint3-NHBint10 SHBint3 SHBint4
+
+3D: 	ed edh vol kp0-kp3 ka1-ka3
+
+QC: 	homo homo1 lumo lumo1 hf dm
+
+Physiochemical:  logp 
+
