@@ -8,12 +8,17 @@ library(leaps)
 ## Load data
 load('lta98.rda')
 attach(lta98)
+ltaTS = ltaTS[-1,]
+ltaTC = ltaTC[-1,]
+ltaQC = ltaQC[-1,]
+lta3D = lta3D[-1,]
+Y = Y[-1]
 
 ## supSVD estimation
-modTS = supSVD(X=scale(ltaTS), Y=as.matrix(Y), r=5, quiet=F)
+modTS = supSVD(Y=scale(ltaTS), X=as.matrix(Y), r=1, quiet=T)
 
 ## classfication perfformance??
-supSVD.analyze(X=scale(ltaQC),Y=as.matrix(Y<1))
+supSVD.analyze(X=scale(cbind(ltaTS,ltaTC)),Y=as.matrix(Y>0), quiet=T)
 
 ## all subsets regrssion
 ltaTS1 = cbind(ltaTS[,1:70],Y)

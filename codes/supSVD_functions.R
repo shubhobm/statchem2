@@ -43,8 +43,8 @@ supSVD = function(X, Y, r, tol=1e-5, maxit=1e3, quiet=T){
     sig2.by.dSigf = sig2e/dSig.f
     
     # E step
-    EU.cond = (Y%*%B%*%diag(sig2.by.dSigf) + X%*%V) %*% diag((1 + sig2.by.dSigf)^(-1))
-    VarU.cond = diag((1/dSig.f+1/sig2e)^(-1))
+    EU.cond = (Y%*%B%*%diag(sig2.by.dSigf, r) + X%*%V) %*% diag((1 + sig2.by.dSigf)^(-1), r)
+    VarU.cond = diag((1/dSig.f+1/sig2e)^(-1), r)
     
     # M step
     Bh = as.matrix(solve(crossprod(Y))%*%t(Y)%*%EU.cond)
@@ -98,12 +98,12 @@ supSVD = function(X, Y, r, tol=1e-5, maxit=1e3, quiet=T){
 supSVD.analyze = function(X, Y, tol=1e-5, maxit=1e3, quiet=T){
   
   # PCA of data matrix
-  s2 = (princomp(X)$sdev)^2; ss2 = sum(s2)
-  r = min(which(cumsum(s2)>=0.95*ss2))
+  s2 = svd(X)$d; ss2 = sum(s2)
+  r = min(which(cumsum(s2)>=0.90*ss2))
   s2.sel = s2[1:r]
   
     # fit supSVD models
-  mod = supSVD(X=X, Y=Y, r=r, tol=tol, maxit=maxit, quiet=quiet)
+  mod = supSVD(X=X, Y=as.matrix(Y), r=r, tol=tol, maxit=maxit, quiet=quiet)
   # project data onto loading vectors
   pX = X%*%(mod$V)
   # pairs(pX, col=ifelse(Y==1,'red','blue'),pch=19)
